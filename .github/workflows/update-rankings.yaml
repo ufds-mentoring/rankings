@@ -16,7 +16,7 @@ jobs:
       # modify https://stackoverflow.com/a/16734796/9496502 so it hopefully works 
       - name: Inject JS into the page
         run: |
-          sed -i.bak "s~<head[^>]*>~&<script type='text/javascript' src='./injection.js'</script>~" index.html
+          sed -i "s~<head[^>]*>~&<script type='text/javascript' src='./injection.js'></script>~" index.html
       - uses: stefanzweifel/git-auto-commit-action@v4
         with: 
           commit_message: Updated website
