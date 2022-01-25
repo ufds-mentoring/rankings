@@ -1,0 +1,22 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *' # Shortest interval at which GitHub actions can repeat
+
+jobs:
+  update-website:
+    runs-on: ubuntu-20.04
+    steps:
+      # Copies the CodeBreaker page into the index.html file
+      - name: Get CodeBreaker Page
+        run: |
+          curl "https://codebreaker.xyz/rankings" > index.html 
+      - name: Inject JS into the page
+        run: |
+          sed -i.bak "s#</head>#<script src='./injection.js'</script>\n</head>#" "${1}/${2}/${i}.html"
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with: 
+          commit_message: Updated website
+          
