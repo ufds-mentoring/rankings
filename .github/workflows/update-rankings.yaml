@@ -17,6 +17,8 @@ jobs:
       - name: Inject JS into the page
         run: |
           sed -i "s~<head[^>]*>~&<script type='text/javascript' src='./injection.js'></script>~" index.html
+      - name: check filesystem
+        run: ls
       - uses: stefanzweifel/git-auto-commit-action@v4
         with: 
           commit_message: Updated website
