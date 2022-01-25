@@ -1,14 +1,16 @@
 name: Build
 
-on: push
-#   workflow_dispatch:
-#   schedule:
-#     - cron: '*/5 * * * *' # Shortest interval at which GitHub actions can repeat
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: '*/6 * * * *' # Shortest interval at which GitHub actions can repeat
 
 jobs:
   update-website:
     runs-on: ubuntu-20.04
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
       # Copies the CodeBreaker page into the index.html file
       - name: Get CodeBreaker Page
         run: |
@@ -17,7 +19,10 @@ jobs:
       - name: Inject JS into the page
         run: |
           sed -i "s~<head[^>]*>~&<script type='text/javascript' src='./injection.js'></script>~" index.html
+      - name: check filesystem
+        run: ls
       - uses: stefanzweifel/git-auto-commit-action@v4
         with: 
           commit_message: Updated website
+          commit_user_name: "GitHub Site Update"
           
