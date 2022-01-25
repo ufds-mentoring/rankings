@@ -3,7 +3,7 @@ name: Build
 on: 
   workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *' # Shortest interval at which GitHub actions can repeat
+    - cron: '*/6 * * * *' # Shortest interval at which GitHub actions can repeat
 
 jobs:
   update-website:
