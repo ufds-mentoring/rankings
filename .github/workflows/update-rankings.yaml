@@ -9,6 +9,8 @@ jobs:
   update-website:
     runs-on: ubuntu-20.04
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
       # Copies the CodeBreaker page into the index.html file
       - name: Get CodeBreaker Page
         run: |
