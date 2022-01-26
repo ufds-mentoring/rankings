@@ -1,5 +1,39 @@
 document.addEventListener("DOMContentLoaded", function() {
-    ufds_people = ["windreaper", "ritulkrsingh", "aryan12", "avaneeshk098", "sidpark1", "saarang", "devomega07", "sumitkk10", "arujbansal", "sichomohit", "Srivatsav"];
+    ufds_people = [
+        "windreaper", 
+        "ritulkrsingh", 
+        "aryan12", 
+        "avaneeshk098", 
+        "sidpark1", 
+        "saarang", 
+        "devomega07", 
+        "sumitkk10", 
+        "arujbansal", 
+        "sichomohit", 
+        "Srivatsav",
+        "Sadbus",
+        "Pushkaraj",
+        "blue",
+        "Xenux",
+        "arujbansal",
+        "DheeruYS",
+        "rajatshenoi",
+        "thbhjo",
+        "shark25361",
+        "ak2006",
+        "dexsy",
+        "mihir",
+        "n00bie1004",
+        "nipunattri1234",
+        "akshtsinghania",
+        "shiven",
+        "socho",
+        "astoria",
+        "chinmayajha",
+        "anonymous1",
+        "acktron",
+        "SiddhantAttavar"
+    ];
     ufds_rank = 1;
     table = document.querySelector("#myTable");
     var num_of_rows = table.rows.length - 1;
