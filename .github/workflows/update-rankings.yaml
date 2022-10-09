@@ -3,7 +3,7 @@ name: Build
 on: 
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *' # Runs everyday
+    # - cron: '0 0 * * *' # Runs everyday
 
 jobs:
   update-website:
